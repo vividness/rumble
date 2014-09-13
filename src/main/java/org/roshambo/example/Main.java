@@ -6,22 +6,24 @@ package org.roshambo.example;
  */
 import org.roshambo.*;
 
+/**
+ * Importing example AIs
+ */
+import org.roshambo.example.competitors.DumbAI;
+import org.roshambo.example.competitors.RandomAI;
+
 public class Main {
     public static void main(String[] args) {
         /**
-         * First competitor
+         * Instantiate competitors
          */
-        Competitor p1 = new DumbAI();
-
-        /**
-         * Second competitor
-         */
-        Competitor p2 = new RandomAI();
+        Competitor player1 = new DumbAI();
+        Competitor player2 = new RandomAI();
 
         /**
          * Setup a new match and pass in the competitors and the number of rounds
          */
-        Match match = new Match(p1, p2, 10);
+        Match match = new Match(player1, player2, 10);
 
         /**
          * This is kinda convenience method. There's also another method "fightNextRound()"
