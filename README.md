@@ -21,9 +21,9 @@ public class RandomAI implements Competitor {
 
     @Override
     public Weapon engage() {
-        int pick = new Random().nextInt(Weapon.values().length);
+        int pick = new Random().nextInt(Throw.values().length);
 
-        return Letter.values()[pick];
+        return Throw.values()[pick];
     }
 
     @Override
