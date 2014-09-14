@@ -12,6 +12,9 @@ import org.roshambo.*;
 import org.roshambo.example.competitors.DumbAI;
 import org.roshambo.example.competitors.RandomAI;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
         /**
@@ -32,12 +35,17 @@ public class Main {
          * IMPORTANT: After each round, the match instance will send feedback to the both
          * competitors so they can adjust their strategy based on previous actions.
          */
-        match.fightUntilFinish();
+        match.fightUntilFinished();
 
         /**
          * Output helper method. If you want the results table as a hash just call "match.getResults()".
          */
-        Helpers.printResults(match);
+        printResults(match);
+    }
+
+    public static void printResults(Match match) {
+        Competitor player1 = match.getPlayer1();
+        Competitor player2 = match.getPlayer2();
 
         /**
          * "match.getResults" will return a hash map that looks like this HashMap<Integer,HashMap<String, String>>
@@ -50,5 +58,22 @@ public class Main {
          *   3: {"player_1": "PAPER", "player_2": "SCISSORS", "WINNER": "player_2"},
          * }
          */
+        HashMap<Integer,HashMap<String, String>> results = match.getResults();
+        HashMap<String, Integer> totals = match.getTotals();
+
+        System.out.format("Round,%s,%s,Winner\n", player1.name(), player2.name());
+
+        for (Map.Entry<Integer, HashMap<String, String>> entry : results.entrySet()) {
+            Integer round   = entry.getKey();
+            String  weapon1 = entry.getValue().get(player1.name());
+            String  weapon2 = entry.getValue().get(player2.name());
+            String  winner  = entry.getValue().get("WINNER");
+
+            System.out.format("%d,%s,%s,%s\n", round, weapon1, weapon2, winner);
+        }
+
+        System.out.format("\n%s: %s,%s: %s,Ties: %s\n",
+            player1.name(), totals.get(player1.name()), player2.name(), totals.get(player2.name()), totals.get("Ties")
+        );
     }
 }
