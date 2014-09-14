@@ -40,8 +40,10 @@ public interface Competitor {
      * This method will be called after your opponents throws.
      * This is the input for your AI.
      *
-     * @param round Your opponent's throw
-     * @param victory
+     * @param round   Roud number
+     * @param victory Set to true if you have won this round
+     * @param myThrow Your throw
+     * @param opponentThrow Opponent's throw
      */
     void feedback(int round, boolean victory, Throw myThrow, Throw opponentThrow);
 
