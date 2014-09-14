@@ -33,12 +33,11 @@ public class RandomAI implements Competitor {
     /**
      * Method that receives round feedback.
      * In this example, this bot is completely oblivious of such thing.
-     *
-     * @param round         Number of the round
-     * @param hasWon        True if you have won
+     *  @param round         Number of the round
+     * @param victory        True if you have won
      * @param myThrow       Your throw
      * @param opponentThrow Your opponent's throw
      */
     @Override
-    public void feedback(int round, boolean hasWon, Competitor.Throw myThrow, Competitor.Throw opponentThrow) {}
+    public void feedback(int round, boolean victory, Throw myThrow, Throw opponentThrow) {}
 }

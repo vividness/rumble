@@ -6,19 +6,19 @@ package org.roshambo;
  * example:
  *
  * public class RandomAI implements Competitor {
- *     @Override
+ *     //@Override
  *     public String name() {
  *         return "Random AI";
  *     }
  *
- *     @Override
+ *     //@Override
  *     public Weapon engage() {
  *         int pick = new Random().nextInt(Weapon.values().length);
  *
  *         return Letter.values()[pick];
  *     }
  *
- *     @Override
+ *     //@Override
  *     void feedback(int round, boolean hasWon, Competitor.Throw myThrow, Competitor.Throw opponentThrow) {
  *         // feedback logic here
  *     }
@@ -41,8 +41,9 @@ public interface Competitor {
      * This is the input for your AI.
      *
      * @param round Your opponent's throw
+     * @param victory
      */
-    void feedback(int round, boolean hasWon, Competitor.Throw myThrow, Competitor.Throw opponentThrow);
+    void feedback(int round, boolean victory, Throw myThrow, Throw opponentThrow);
 
     /**
      * This method will be used for the result table.
