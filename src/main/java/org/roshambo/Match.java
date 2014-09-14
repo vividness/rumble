@@ -3,15 +3,34 @@ package org.roshambo;
 import java.util.HashMap;
 
 public class Match {
+    /**
+     * Total number of rounds to fight
+     */
     private int numRounds;
+
+    /**
+     * Current round
+     */
     private int currentRound;
 
+    /**
+     * Competitors
+     */
     private Competitor player1;
     private Competitor player2;
 
+    /**
+     * Match results
+     */
     private HashMap<Integer,HashMap<String, String>> results;
     private HashMap<String, Integer> totals = new HashMap<String, Integer>();
 
+    /**
+     *
+     * @param player1   Player 1
+     * @param player2   Player 2
+     * @param numRounds Number of rounds to fight in this match
+     */
     public Match(Competitor player1, Competitor player2, int numRounds) {
         this.player1      = player1;
         this.player2      = player2;
@@ -24,42 +43,80 @@ public class Match {
         this.totals.put("PLAYER_2", 0);
     }
 
+    /**
+     * Fights all rounds
+     */
     public void fightUntilFinished() {
         while (currentRound <= numRounds) {
-            fight(++currentRound);
+            currentRound += 1;
+            fight();
         }
     }
 
+    /**
+     * Fights next round
+     */
     public void fightNextRound() {
-        fight(++currentRound);
+        currentRound += 1;
+        fight();
     }
 
+    /**
+     * Player 1 getter
+     *
+     * @return Player 1
+     */
     public Competitor getPlayer1() {
         return player1;
     }
 
+    /**
+     * Player 2 getter
+     *
+     * @return Player 2
+     */
     public Competitor getPlayer2() {
         return player2;
     }
 
+    /**
+     * Returns match results
+     *
+     * @return Match results hash
+     */
     public HashMap<Integer,HashMap<String, String>> getResults() {
         return results;
     }
 
+    /**
+     * Returns match results totals aggregate
+     *
+     * @return Match totals aggregate
+     */
     public HashMap<String, Integer> getTotals() {
         return totals;
     }
 
-    private void fight(int round) {
+    /**
+     * Fights next round
+     */
+    private void fight() {
         Competitor.Throw throwP1 = player1.engage();
         Competitor.Throw throwP2 = player2.engage();
 
         Competitor winner = decideWinner(throwP1, throwP2);
 
-        updateResults(round, winner, throwP1, throwP2);
-        notifyCompetitors(round, winner, throwP1, throwP2);
+        updateResults(winner, throwP1, throwP2);
+        notifyCompetitors(winner, throwP1, throwP2);
     }
 
+    /**
+     * Return winner of the round
+     *
+     * @param throwP1 Player 1's throw
+     * @param throwP2 Player 2's throw
+     * @return Round winner
+     */
     private Competitor decideWinner(Competitor.Throw throwP1, Competitor.Throw throwP2) {
         switch (throwP1) {
             case PAPER: {
@@ -83,12 +140,26 @@ public class Match {
         }
     }
 
-    private void notifyCompetitors(int round, Competitor winner, Competitor.Throw throwP1, Competitor.Throw throwP2) {
-        player1.feedback(round, winner == player1, throwP1, throwP2);
-        player2.feedback(round, winner == player2, throwP2, throwP1);
+    /**
+     * Send round results to the player 1 and player 2 competitor objects
+     *
+     * @param winner  Player that has won the round
+     * @param throwP1 Player 1's throw
+     * @param throwP2 Player 2's throw
+     */
+    private void notifyCompetitors(Competitor winner, Competitor.Throw throwP1, Competitor.Throw throwP2) {
+        player1.feedback(currentRound, winner == player1, throwP1, throwP2);
+        player2.feedback(currentRound, winner == player2, throwP2, throwP1);
     }
 
-    private void updateResults(int round, Competitor winner, Competitor.Throw throwP1, Competitor.Throw throwP2) {
+    /**
+     * Updates results hash
+     *
+     * @param winner  Winner of the round
+     * @param throwP1 Player 1's throw
+     * @param throwP2 Player 2's throw
+     */
+    private void updateResults(Competitor winner, Competitor.Throw throwP1, Competitor.Throw throwP2) {
         HashMap<String, String> result = new HashMap<String, String>();
 
         result.put("PLAYER_1", throwP1.toString());
@@ -105,6 +176,6 @@ public class Match {
             result.put("WINNER", "NONE");
         }
 
-        results.put(round, result);
+        results.put(currentRound, result);
     }
 }
