@@ -35,12 +35,12 @@ public class Main {
         match.fightUntilFinish();
 
         /**
-         * Output helper method. If you want the results table as a hash just call "getResults()".
+         * Output helper method. If you want the results table as a hash just call "match.getResults()".
          */
-        match.printResults();
+        Helpers.printResults(match);
 
         /**
-         * "getResults" will return a hash map that looks like this HashMap<Integer,HashMap<String, String>>
+         * "match.getResults" will return a hash map that looks like this HashMap<Integer,HashMap<String, String>>
          *
          * or to say in JSON, it would look something like this:
          *
