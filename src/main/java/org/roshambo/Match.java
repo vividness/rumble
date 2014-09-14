@@ -14,6 +14,12 @@ public class Match {
     private int currentRound;
 
     /**
+     * Once the match is over this variable will point to
+     * the competitor who won the match
+     */
+    private Competitor winner = null;
+
+    /**
      * Competitors
      */
     private Competitor player1;
@@ -51,6 +57,8 @@ public class Match {
             currentRound += 1;
             fight();
         }
+
+        winner = totals.get("PLAYER_1") > totals.get("PLAYER_2") ? player1 : player2;
     }
 
     /**
@@ -78,6 +86,13 @@ public class Match {
     public Competitor getPlayer2() {
         return player2;
     }
+
+    /**
+     * Returns the winner of the match
+     *
+     * @return Competitor that won the match
+     */
+    public Competitor getWinner() { return winner; }
 
     /**
      * Returns match results

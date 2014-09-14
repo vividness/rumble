@@ -19,7 +19,7 @@ public class MatchTest extends TestCase {
 
             @Override
             public String name() {
-                return null;
+                return "Competitor 1";
             }
         };
 
@@ -36,15 +36,14 @@ public class MatchTest extends TestCase {
 
             @Override
             public String name() {
-                return null;
+                return "Competitor 2";
             }
         };
 
         Match match = new Match(c1, c2, 10);
         match.fightUntilFinished();
 
-        // assert winner
-        // check results manually vs create a method that returns winner
+        assertEquals(match.getWinner(), c2);
     }
 
     public void testFightNextRound() throws Exception {
@@ -61,7 +60,7 @@ public class MatchTest extends TestCase {
 
             @Override
             public String name() {
-                return null;
+                return "Competitor 1";
             }
         };
 
@@ -78,7 +77,7 @@ public class MatchTest extends TestCase {
 
             @Override
             public String name() {
-                return null;
+                return "Competitor 2";
             }
         };
 
@@ -103,7 +102,7 @@ public class MatchTest extends TestCase {
 
             @Override
             public String name() {
-                return null;
+                return "Competitor 1";
             }
         };
 
@@ -120,7 +119,7 @@ public class MatchTest extends TestCase {
 
             @Override
             public String name() {
-                return null;
+                return "Competitor 2";
             }
         };
 
@@ -142,7 +141,7 @@ public class MatchTest extends TestCase {
 
             @Override
             public String name() {
-                return null;
+                return "Competitor 1";
             }
         };
 
@@ -159,7 +158,7 @@ public class MatchTest extends TestCase {
 
             @Override
             public String name() {
-                return null;
+                return "Competitor 2";
             }
         };
 
