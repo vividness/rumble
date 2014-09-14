@@ -8,14 +8,14 @@ Setup
 * Add it to your project
 * Import the "org.roshambo.Competitor" interface
 * Create a class that extends the interface
-* Don't forget to check the example
+* Don't forget to check the example code inside the package
 
 Example
 -------
 
 ```java
 public class RandomAI implements Competitor {
-    //@Override
+    @Override
     public String name() {
         return "Random AI";
     }
@@ -28,7 +28,7 @@ public class RandomAI implements Competitor {
     }
 
     @Override
-    void feedback(int round, boolean hasWon, Competitor.Throw myThrow, Competitor.Throw opponentThrow) {
+    void feedback(int round, boolean hasWon, Throw myThrow, Throw opponentThrow) {
         // This "AI" actually doesn't care about the feedback as it always play random move
     }
 }
