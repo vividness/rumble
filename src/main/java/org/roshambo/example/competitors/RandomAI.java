@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class RandomAI implements Competitor {
     /**
-     * Your bot's name
+     * Your AI's name
      */
     private static String name = "RadnomAI";
 
@@ -33,7 +33,8 @@ public class RandomAI implements Competitor {
     /**
      * Method that receives round feedback.
      * In this example, this bot is completely oblivious of such thing.
-     *  @param round         Number of the round
+     *
+     * @param round         Number of the round
      * @param victory        True if you have won
      * @param myThrow       Your throw
      * @param opponentThrow Your opponent's throw
