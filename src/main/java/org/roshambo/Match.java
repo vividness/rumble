@@ -24,7 +24,7 @@ public class Match {
         this.totals.put(player2.name(), 0);
     }
 
-    public void fightUntilFinish() {
+    public void fightUntilFinished() {
         while (currentRound <= numRounds) {
             fight(currentRound++);
         }
