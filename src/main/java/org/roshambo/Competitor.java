@@ -1,28 +1,5 @@
 package org.roshambo;
 
-/**
- * Player interface
- *
- * example:
- *
- * public class RandomAI implements Competitor {
- *     //@Override
- *     public String name() {
- *         return "Random AI";
- *     }
- *
- *     //@Override
- *     public Weapon engage() {
- *         int pick = new Random().nextInt(Weapon.values().length);
- *
- *         return Letter.values()[pick];
- *     }
- *
- *     //@Override
- *     void feedback(int round, boolean hasWon, Competitor.Throw myThrow, Competitor.Throw opponentThrow) {
- *         // feedback logic here
- *     }
- */
 public interface Competitor {
     /**
      * Values that the engage method must return
