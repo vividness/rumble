@@ -16,22 +16,22 @@ public class Match {
         this.player1      = player1;
         this.player2      = player2;
         this.numRounds    = numRounds;
-        this.currentRound = 1;
+        this.currentRound = 0;
         this.results      = new HashMap<Integer,HashMap<String, String>>();
 
-        this.totals.put("Ties", 0);
-        this.totals.put(player1.name(), 0);
-        this.totals.put(player2.name(), 0);
+        this.totals.put("NONE", 0);
+        this.totals.put("PLAYER_1", 0);
+        this.totals.put("PLAYER_2", 0);
     }
 
     public void fightUntilFinished() {
         while (currentRound <= numRounds) {
-            fight(currentRound++);
+            fight(++currentRound);
         }
     }
 
     public void fightNextRound() {
-        fight(currentRound++);
+        fight(++currentRound);
     }
 
     public Competitor getPlayer1() {
@@ -91,15 +91,18 @@ public class Match {
     private void updateResults(int round, Competitor winner, Competitor.Throw throwP1, Competitor.Throw throwP2) {
         HashMap<String, String> result = new HashMap<String, String>();
 
-        result.put(player1.name(), throwP1.toString());
-        result.put(player2.name(), throwP2.toString());
+        result.put("PLAYER_1", throwP1.toString());
+        result.put("PLAYER_2", throwP2.toString());
 
-        if (winner == null) {
-            totals.put("Ties", totals.get("Ties") + 1);
-            result.put("WINNER", "[Tie]");
+        if (winner == player1) {
+            result.put("WINNER", "PLAYER_1");
+            totals.put("PLAYER_1", totals.get("PLAYER_1") + 1);
+        } else if (winner == player2) {
+            result.put("WINNER", "PLAYER_2");
+            totals.put("PLAYER_2", totals.get("PLAYER_2") + 1);
         } else {
-            result.put("WINNER", winner.name());
-            totals.put(winner.name(), totals.get(winner.name()) + 1);
+            totals.put("NONE", totals.get("NONE") + 1);
+            result.put("WINNER", "NONE");
         }
 
         results.put(round, result);
