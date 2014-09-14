@@ -53,9 +53,9 @@ public class Main {
          * or to say in JSON, it would look something like this:
          *
          * {
-         *   1: {"player_1": "ROCK",  "player_2": "PAPER", "WINNER": "player_2"},
-         *   2: {"player_1": "PAPER", "player_2": "PAPER", "WINNER": "Tie"},
-         *   3: {"player_1": "PAPER", "player_2": "SCISSORS", "WINNER": "player_2"},
+         *   1: {"PLAYER_1": "ROCK",  "PLAYER_2": "PAPER", "WINNER": "PLAYER_2"},
+         *   2: {"PLAYER_1": "PAPER", "PLAYER_2": "PAPER", "WINNER": "NONE"},
+         *   3: {"PLAYER_1": "PAPER", "PLAYER_2": "SCISSORS", "WINNER": "PLAYER_2"},
          * }
          */
         HashMap<Integer,HashMap<String, String>> results = match.getResults();
@@ -65,15 +65,15 @@ public class Main {
 
         for (Map.Entry<Integer, HashMap<String, String>> entry : results.entrySet()) {
             Integer round   = entry.getKey();
-            String  weapon1 = entry.getValue().get(player1.name());
-            String  weapon2 = entry.getValue().get(player2.name());
+            String  throwP1 = entry.getValue().get("PLAYER_1");
+            String  throwP2 = entry.getValue().get("PLAYER_2");
             String  winner  = entry.getValue().get("WINNER");
 
-            System.out.format("%d,%s,%s,%s\n", round, weapon1, weapon2, winner);
+            System.out.format("%d,%s,%s,%s\n", round, throwP1, throwP2, winner);
         }
 
         System.out.format("\n%s: %s,%s: %s,Ties: %s\n",
-            player1.name(), totals.get(player1.name()), player2.name(), totals.get(player2.name()), totals.get("Ties")
+            player1.name(), totals.get("PLAYER_1"), player2.name(), totals.get("PLAYER_2"), totals.get("NONE")
         );
     }
 }
