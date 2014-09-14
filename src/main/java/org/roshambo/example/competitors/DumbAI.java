@@ -6,15 +6,12 @@ import org.roshambo.Competitor;
  * Dumb AI that throws in predictable order
  */
 public class DumbAI implements Competitor {
-    /**
-     * Some internals
-     */
-    private Integer i = 0;
+    private static Integer i = 0;
 
     /**
-     * Your bot's name
+     * Your AI's name
      */
-    private String name = "DumbAI";
+    private static String name = "DumbAI";
 
     /**
      * Method that returns name of your bot
