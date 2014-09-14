@@ -40,7 +40,7 @@ public interface Competitor {
      * This method will be called after your opponents throws.
      * This is the input for your AI.
      *
-     * @param round   Roud number
+     * @param round   Round number
      * @param victory Set to true if you have won this round
      * @param myThrow Your throw
      * @param opponentThrow Opponent's throw
