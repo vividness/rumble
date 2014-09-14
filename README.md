@@ -12,7 +12,6 @@ Setup
 
 Example
 -------
-
 ```java
 public class RandomAI implements Competitor {
     @Override
@@ -29,7 +28,12 @@ public class RandomAI implements Competitor {
 
     @Override
     void feedback(int round, boolean hasWon, Throw myThrow, Throw opponentThrow) {
-        // This "AI" actually doesn't care about the feedback as it always play random move
+        // This "AI" actually doesn't care about 
+        // the feedback as it always play random move
     }
 }
 ```
+
+Author
+------
+Vladimir Ivic <vlad@retentionscience>
