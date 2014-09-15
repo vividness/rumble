@@ -1,7 +1,6 @@
 package org.roshambo;
 
 import junit.framework.TestCase;
-import org.junit.Ignore;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +24,17 @@ public class MatchTest extends TestCase {
                 return "Competitor " + t.toString();
             }
         };
+    }
+
+    public void testPlayerGetName() {
+        Competitor playerA = providePlayerThatThrows(Competitor.Throw.ROCK);
+        assertEquals(playerA.name(), "Competitor ROCK");
+
+        Competitor playerB = providePlayerThatThrows(Competitor.Throw.PAPER);
+        assertEquals(playerB.name(), "Competitor PAPER");
+
+        Competitor playerC = providePlayerThatThrows(Competitor.Throw.SCISSORS);
+        assertEquals(playerC.name(), "Competitor SCISSORS");
     }
 
     public void testFightUntilFinishedPlayer1Wins() throws Exception {
