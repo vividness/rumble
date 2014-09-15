@@ -5,13 +5,15 @@ Java framework for pairing different Rock Paper Scissors AIs
 Setup
 -----
 * Download the latest jar distribution from the "dist" directory. 
-* Add it to your project
-* Import the "org.roshambo.Competitor" interface
-* Create a class that extends the interface
-* Don't forget to check the example code inside the package
+* Add it to your project by copying the jar into your project's lib directory.
+* Import the "org.roshambo.Competitor" interface.
+* Create a class that extends the interface.
+* Don't forget to check the example code inside the package.
 
 Example
 -------
+To build your own rock paper scissors AI you'd just need to create a new class that extends the `Competitor` interface.
+
 ```java
 public class RandomAI implements Competitor {
     @Override
@@ -37,7 +39,7 @@ public class RandomAI implements Competitor {
 }
 ```
 
-Now let's say you want to try you AI fighting itself. You'd need to create a Match instance and let the AIs fight for any ammoun of rounds.
+Now let's say you want to try you AI fighting itself. You'd need to create a Match instance and let the AIs fight for any amount of rounds.
 
 ```java
 import org.roshambo.Match;
