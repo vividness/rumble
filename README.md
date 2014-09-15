@@ -1,4 +1,4 @@
-Roshambo
+Roshambo ![Build status](https://travis-ci.org/mancmelou/Roshambo.svg?branch=master)
 ========
 Java framework for pairing different Rock Paper Scissors AIs
 
