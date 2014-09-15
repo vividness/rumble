@@ -54,7 +54,7 @@ public class Main {
         
         if (winner == player1) {
             System.out.println("The winner is Player 1");
-        } else if (winner == player1) {
+        } else if (winner == player2) {
             System.out.println("The winner is Player 2");
         } else {
             System.out.println("It's tie");
