@@ -40,6 +40,9 @@ public class RandomAI implements Competitor {
 Now let's say you want to try you AI fighting itself. You'd need to create a Match instance and let the AIs fight for any ammoun of rounds.
 
 ```java
+import org.roshambo.Match;
+import org.roshambo.Competitor;
+
 public class Main {
     public static void main(String[] args) {
         Competitor player1 = new RandomAI();
