@@ -53,12 +53,16 @@ public class Match {
      * Fights all rounds
      */
     public void fightUntilFinished() {
-        while (currentRound <= numRounds) {
+        do {
             currentRound += 1;
             fight();
-        }
+        } while (currentRound < numRounds);
 
-        winner = totals.get("PLAYER_1") > totals.get("PLAYER_2") ? player1 : player2;
+        if (totals.get("PLAYER_1") > totals.get("PLAYER_2")) {
+            winner = player1;
+        } else if (totals.get("PLAYER_1") < totals.get("PLAYER_2")) {
+            winner = player2;
+        }
     }
 
     /**
