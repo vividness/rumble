@@ -13,7 +13,7 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Roshambo',
+        attributes 'Implementation-Title': 'Rumble',
                    'Implementation-Version': version
     }
 }
