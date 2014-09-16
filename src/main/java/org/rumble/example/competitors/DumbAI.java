@@ -1,6 +1,6 @@
-package org.roshambo.example.competitors;
+package org.rumble.example.competitors;
 
-import org.roshambo.Competitor;
+import org.rumble.Competitor;
 
 /**
  * Dumb AI that throws in predictable order
