@@ -1,4 +1,4 @@
-package org.rumble.example.competitors;
+package org.rumble.example.ai;
 
 import org.rumble.Competitor;
 import java.util.Random;
