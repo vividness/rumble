@@ -10,8 +10,8 @@ import org.rumble.*;
  * Importing example AIs
  */
 import org.rumble.ai.MarkovChain;
-import org.rumble.example.competitors.DumbAI;
-import org.rumble.example.competitors.RandomAI;
+import org.rumble.example.ai.DumbAI;
+import org.rumble.example.ai.RandomAI;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +28,7 @@ public class Main {
         /**
          * Setup a new match and pass in the competitors and the number of rounds
          */
-        Match match = new Match(player1, player3, 10);
+        Match match = new Match(player1, player3, 100);
 
         /**
          * This is a convenience method. There's also another method "fightNextRound()"
