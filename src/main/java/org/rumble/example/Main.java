@@ -1,16 +1,16 @@
-package org.roshambo.example;
+package org.rumble.example;
 
 /**
  * Import the package so you can use the match class and run different AIs
  * here in your main method.
  */
-import org.roshambo.*;
+import org.rumble.*;
 
 /**
  * Importing example AIs
  */
-import org.roshambo.example.competitors.DumbAI;
-import org.roshambo.example.competitors.RandomAI;
+import org.rumble.example.competitors.DumbAI;
+import org.rumble.example.competitors.RandomAI;
 
 import java.util.HashMap;
 import java.util.Map;
