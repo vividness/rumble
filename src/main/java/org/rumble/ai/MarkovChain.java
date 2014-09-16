@@ -108,15 +108,11 @@ public class MarkovChain implements Competitor {
      * @return
      */
     private float[] getNextMoveProbability(Throw lastThrow) {
-        int rowSum = 0;
-
         float[][] result = new float[3][3];
 
         for (int i = 0; i < 3; i++) {
-            rowSum += i;
-
             for (int j = 0; j < 3; j++) {
-                result[i][j] = (float) chain[i][j] / rowSum;
+                result[i][j] = (float) chain[i][j] / (chain[i][0] + chain[i][1] + chain[i][2]);
             }
         }
 
