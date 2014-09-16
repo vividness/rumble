@@ -9,6 +9,7 @@ import org.rumble.*;
 /**
  * Importing example AIs
  */
+import org.rumble.ai.MarkovChain;
 import org.rumble.example.competitors.DumbAI;
 import org.rumble.example.competitors.RandomAI;
 
@@ -22,14 +23,15 @@ public class Main {
          */
         Competitor player1 = new DumbAI();
         Competitor player2 = new RandomAI();
+        Competitor player3 = new MarkovChain();
 
         /**
          * Setup a new match and pass in the competitors and the number of rounds
          */
-        Match match = new Match(player1, player2, 10);
+        Match match = new Match(player1, player3, 10);
 
         /**
-         * This is kinda convenience method. There's also another method "fightNextRound()"
+         * This is a convenience method. There's also another method "fightNextRound()"
          * where you can iterate through rounds one by one.
          *
          * IMPORTANT: After each round, the match instance will send feedback to the both
