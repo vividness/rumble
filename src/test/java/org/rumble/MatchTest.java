@@ -1,4 +1,4 @@
-package org.roshambo;
+package org.rumble;
 
 import junit.framework.TestCase;
 
