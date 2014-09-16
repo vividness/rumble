@@ -1,12 +1,12 @@
-Roshambo ![Build status](https://travis-ci.org/mancmelou/Roshambo.svg?branch=master)
+Rumble ![Build status](https://travis-ci.org/mancmelou/rumble.svg?branch=master)
 ========
-Java framework for pairing different Rock Paper Scissors AIs
+Java "framework" for pairing different Rock Paper Scissors AIs.
 
 Setup
 -----
 * Download the latest jar distribution from the "dist" directory. 
 * Add it to your project by copying the jar into your project's lib directory.
-* Import the "org.roshambo.Competitor" interface.
+* Import the "org.rumble.Competitor" interface.
 * Create a class that extends the interface.
 * Don't forget to check the example code inside the package.
 
@@ -42,8 +42,8 @@ public class RandomAI implements Competitor {
 Now let's say you want to try you AI fighting itself. You'd need to create a Match instance and let the AIs fight for any amount of rounds.
 
 ```java
-import org.roshambo.Match;
-import org.roshambo.Competitor;
+import org.rumble.Match;
+import org.rumble.Competitor;
 
 public class Main {
     public static void main(String[] args) {
