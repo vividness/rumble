@@ -1,4 +1,4 @@
-Rumble ![Build status](https://travis-ci.org/mancmelou/rumble.svg?branch=master)
+Rumble [![Build Status](https://travis-ci.org/mancmelou/rumble.svg?branch=master)](https://travis-ci.org/mancmelou/rumble)
 ========
 Java "framework" for pairing different Rock Paper Scissors AIs.
 
