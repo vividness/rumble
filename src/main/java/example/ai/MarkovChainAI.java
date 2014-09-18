@@ -31,8 +31,8 @@ public class MarkovChainAI implements Competitor {
         previousThrow = Throw.values()[new Random().nextInt(Throw.values().length)];
         chain = new int[3][3];
 
-        for (int i = 0; i < chain.length; i++) {
-            for (int j = 0; j < chain.length; j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 chain[i][j] = 1;
             }
         }
