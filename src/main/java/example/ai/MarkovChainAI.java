@@ -11,18 +11,32 @@ public class MarkovChainAI implements Competitor {
      * Put the name inside a static String so your "name()"
      * method doesn't return a new String object every time is called.
      */
-    private static String name = "MarkovChain";
+    private static String name = "MarkovChainAI";
 
     /**
      * Raw matrix that will keep the count of the events.
      * For stochastic transition matrix call "getNextMoveProbability()".
      */
-    private int[][] chain = new int[3][3];
+    private int[][] chain;
 
     /**
-     * Randomly pick initial previous move. Makes it easier to implement.
+     * Randomly pick initial previous move in the constructor.
      */
-    private Throw previousThrow = Throw.values()[new Random().nextInt(Throw.values().length)];
+    private Throw previousThrow;
+
+    /**
+     * Initialize the chain with 1s so the math is correct
+     */
+    public MarkovChainAI() {
+        previousThrow = Throw.values()[new Random().nextInt(Throw.values().length)];
+        chain = new int[3][3];
+
+        for (int i = 0; i < chain.length; i++) {
+            for (int j = 0; j < chain.length; j++) {
+                chain[i][j] = 1;
+            }
+        }
+    }
 
     @Override
     public String name() {
