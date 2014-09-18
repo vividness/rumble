@@ -6,13 +6,12 @@ Setup
 -----
 * Download the latest jar distribution from the "dist" directory. 
 * Add it to your project by copying the jar into your project's lib directory.
-* Import the "org.rumble.Competitor" interface.
-* Create a class that extends the interface.
+* Import the "org.rumble.Competitor" interface and create your AI that implements the interface.
 * Don't forget to check the example code inside the package.
 
 Example
 -------
-To build your own rock paper scissors AI you'd need to create a new class in your project that extends the `Competitor` interface.
+To build your own rock paper scissors AI you'd need to create a new class in your project that implements the `Competitor` interface.
 
 ```java
 public class RandomAI implements Competitor {
@@ -23,8 +22,8 @@ public class RandomAI implements Competitor {
 
     @Override
     public Throw engage() {
-        // Here, you implement your logic
-        // Your AI should return one of the Competitor.Throw values
+        // You implement your logic here. This is the method that returns 
+        // one of the "Competitor.Throw" values {ROCK, PAPER, SCISSORS}
         
         int pick = new Random().nextInt(Throw.values().length);
 
@@ -33,13 +32,13 @@ public class RandomAI implements Competitor {
 
     @Override
     void feedback(int round, boolean victory, Throw myThrow, Throw opponentThrow) {
-        // This "AI" actually doesn't care about 
-        // the feedback as it always play random move
+        // This "AI" actually doesn't care about the feedback as it always plays a random move.
+        // If you to implement something that will learn from the opponent's previous moves this is your entry point.
     }
 }
 ```
 
-Now let's say you want to try you AI fighting itself. You'd need to create a Match instance and let the AIs fight for a number of rounds.
+Now, let's say you want to try you AI fighting itself (or another AI). You'd need to create a `Match` instance and let the AIs fight for a number of rounds.
 
 ```java
 import org.rumble.Match;
