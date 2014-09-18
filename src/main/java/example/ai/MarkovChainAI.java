@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * AI that utilizes Markov Chain in playing Rock Paper Scissors game.
  */
-public class MarkovChain implements Competitor {
+public class MarkovChainAI implements Competitor {
     /**
      * Put the name inside a static String so your "name()"
      * method doesn't return a new String object every time is called.

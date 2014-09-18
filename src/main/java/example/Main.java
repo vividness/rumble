@@ -1,26 +1,17 @@
 package example;
 
-/**
- * Import the package so you can use the match class and run different AIs
- * here in your main method.
- */
 import org.rumble.*;
-
-/**
- * Importing example AIs
- */
 import example.ai.*;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
         /**
-         * Instantiate competitors
+         * Instantiate the competitors
          */
         Competitor player1 = new DumbAI();
-        Competitor player2 = new MarkovChain();
+        Competitor player2 = new MarkovChainAI();
 
         /**
          * Setup a new match and pass in the competitors and the number of rounds
