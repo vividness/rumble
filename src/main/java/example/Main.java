@@ -1,4 +1,4 @@
-package org.rumble.example;
+package example;
 
 /**
  * Import the package so you can use the match class and run different AIs
@@ -9,9 +9,8 @@ import org.rumble.*;
 /**
  * Importing example AIs
  */
-import org.rumble.ai.MarkovChain;
-import org.rumble.example.ai.DumbAI;
-import org.rumble.example.ai.RandomAI;
+import example.ai.DumbAI;
+import example.ai.RandomAI;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,12 +22,11 @@ public class Main {
          */
         Competitor player1 = new DumbAI();
         Competitor player2 = new RandomAI();
-        Competitor player3 = new MarkovChain();
 
         /**
          * Setup a new match and pass in the competitors and the number of rounds
          */
-        Match match = new Match(player1, player3, 100);
+        Match match = new Match(player1, player2, 100);
 
         /**
          * This is a convenience method. There's also another method "fightNextRound()"
