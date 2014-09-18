@@ -4,14 +4,14 @@ Java "framework" for pairing different Rock Paper Scissors AIs.
 
 Setup
 -----
-* Download the latest jar distribution from the "dist" directory. 
-* Add it to your project by copying the jar into your project's lib directory.
-* Import the "org.rumble.Competitor" interface and create your AI that implements the interface.
+* Download the latest `jar` distribution from the "dist" directory. 
+* Add it to your project by copying the `jar` into your project's `lib` directory.
+* Import the `org.rumble.Competitor` interface and create your AI class by implementing the interface.
 * Don't forget to check the example code inside the package.
 
 Example
 -------
-To build your own rock paper scissors AI you'd need to create a new class in your project that implements the `Competitor` interface.
+To build your own rock paper scissors AI, you'd need to create a new class in your project that implements the `Competitor` interface.
 
 ```java
 public class RandomAI implements Competitor {
@@ -26,14 +26,16 @@ public class RandomAI implements Competitor {
         // one of the "Competitor.Throw" values {ROCK, PAPER, SCISSORS}
         
         int pick = new Random().nextInt(Throw.values().length);
-
         return Throw.values()[pick];
     }
 
     @Override
     void feedback(int round, boolean victory, Throw myThrow, Throw opponentThrow) {
-        // This "AI" actually doesn't care about the feedback as it always plays a random move.
-        // If you to implement something that will learn from the opponent's previous moves this is your entry point.
+        // This "AI" actually doesn't care about the feedback as it always 
+        // plays a random move.
+        // 
+        // If you want to implement something that will learn from 
+        // the opponent's previous moves - this is your entry point.
     }
 }
 ```
