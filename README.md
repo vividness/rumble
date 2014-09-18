@@ -12,7 +12,7 @@ Setup
 
 Example
 -------
-To build your own rock paper scissors AI you'd just need to create a new class that extends the `Competitor` interface.
+To build your own rock paper scissors AI you'd need to create a new class in your project that extends the `Competitor` interface.
 
 ```java
 public class RandomAI implements Competitor {
@@ -39,7 +39,7 @@ public class RandomAI implements Competitor {
 }
 ```
 
-Now let's say you want to try you AI fighting itself. You'd need to create a Match instance and let the AIs fight for any amount of rounds.
+Now let's say you want to try you AI fighting itself. You'd need to create a Match instance and let the AIs fight for a number of rounds.
 
 ```java
 import org.rumble.Match;
@@ -52,10 +52,9 @@ public class Main {
         
         // Alright, player1 vs player2 in 10 rounds
         Match match = new Match(player1, player2, 10);
-        
         match.fightUntilFinished();
         
-        Competitor winner = m.getWinner();
+        Competitor winner = match.getWinner();
         
         if (winner == player1) {
             System.out.println("The winner is Player 1");
@@ -71,3 +70,7 @@ public class Main {
 Author
 ------
 Vladimir Ivic <vlad@retentionscience>
+
+Todo
+----
+Better readme, more examples.
