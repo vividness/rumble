@@ -9,8 +9,7 @@ import org.rumble.*;
 /**
  * Importing example AIs
  */
-import example.ai.DumbAI;
-import example.ai.RandomAI;
+import example.ai.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +20,7 @@ public class Main {
          * Instantiate competitors
          */
         Competitor player1 = new DumbAI();
-        Competitor player2 = new RandomAI();
+        Competitor player2 = new MarkovChain();
 
         /**
          * Setup a new match and pass in the competitors and the number of rounds
